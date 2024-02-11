@@ -1,6 +1,7 @@
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from "react-router-dom"
 import RootLayout from "./layouts/RootLayout"
 import HomePage from "./pages/HomePage"
+import BeMyVal from "./pages/BeMyVal"
 
 function App() {
 
@@ -8,6 +9,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
+        <Route path="be-my-val" element={<BeMyVal />} />
       </Route>
     )
   )

@@ -5,7 +5,7 @@ const RootLayout = () => {
   return (
     <main className='w-full h-dvh bg-white'>
         <NavBar />
-        <section className='w-full'>
+        <section className='w-full h-full'>
             <Outlet />
         </section>
     </main>
