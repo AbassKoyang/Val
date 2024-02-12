@@ -21,3 +21,14 @@ export const convincingTexts = [
     "Even though you've rejected me, my feelings for you remain unchanged. I'll continue to shower you with love until you can't help but say yes.",
   ];
   
+  const solveEquation = (a, b, c) => {
+    const isNumber = typeof(a, b, c) === 'number';
+    if(isNumber){
+      const discriminant = b * b - ((4 * a )* c);
+      console.log(discriminant);
+    } else {
+      console.log('One of the coefficients is not a number.');
+    }
+  }
+
+  solveEquation(1,5,4)
