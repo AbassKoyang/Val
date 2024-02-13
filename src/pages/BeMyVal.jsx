@@ -29,8 +29,6 @@ const BeMyVal = () => {
     <section className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0">
         <div className="col-span-1 h-full flex flex-col items-center justify-center px-3 lg:px-8">
             <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl text-black font-pacifico'>With every beat of my heart, I ask: will you be my Valentine?</h1>
-            {/* <p className='text-[12px] text-black/90 font-mont text-center text-wrap mt-3'>In the grand ballroom of life, where each step is a dance and each heartbeat a melody, I find myself entranced by the thought of you. Your grace, your warmth, your presence - they light up my world like a thousand twinkling stars. And so, as the music of love fills the air, I extend my hand and ask: would you honor me with your presence as my Valentine this year?</p>
-            <p className='max-w-[500px] text-[12px] text-black/90 font-mont text-center text-wrap'>Together, let's waltz through the pages of our love story and paint the skies with the colors of our affection. Will you be my Valentine?</p> */}
             <p className='mt-8 text-[16px] leading-[20px] text-center text-black/90 font-mont max-w-xl'>{convincingTexts[convincingTextsNumber]}</p>
             <div className="w-full flex items-center justify-center mt-4 lg:hidden">
                 { convincingTextsNumber > 0 && convincingTextsNumber < 2 && (
