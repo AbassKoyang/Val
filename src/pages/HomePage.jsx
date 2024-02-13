@@ -3,7 +3,7 @@ import demo from '../assets/ViteReact-ezgif.com-crop.gif'
 
 const HomePage = () => {
   return (
-    <section  className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0">
+    <section  className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0 overflow-x-hidden">
       <div className="col-span-1 h-full flex flex-col items-center justify-center px-3 lg:px-8">
             <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl font-pacifico bg-gradient-to-r bg-clip-text text-transparent to-indigo-500 via-purple-400 from-pink-500'>Ready to Add Some Sparkle to Your Valentine's Day?</h1>
             <p className='mt-8 text-[16px] leading-[20px] text-center text-black/90 font-mont max-w-xl'>Say goodbye to boring Valentine's Day messages! 😂 With just a click of our magical button, you can charm your crush 😌, woo your sweetheart, 😍 or surprise your bestie with a burst of love and laughter 😜. Our whimsical button promises endless fun and excitement as you embark on a journey of romantic mischief. So why wait? Let's sprinkle some love and joy together! 💖✨</p>
