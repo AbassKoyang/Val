@@ -3,11 +3,13 @@ import { convincingTexts } from '../assets/constants'
 import puppyDogGif from '../assets/peach-goma-peach-and-goma.gif'
 import kissesGif from '../assets/peach-goma-love-peach-goma.gif'
 import aloneGif from '../assets/alone-lonely.gif'
+import Confetti from 'react-confetti-boom';
 
 const BeMyVal = () => {
     const [convincingTextsNumber, setConvincingTextsNumber] = useState(1);
     const [growCount, setgrowCount] = useState(1);
-    const [shrinkCount, setShrinkCount] = useState(1)
+    const [shrinkCount, setShrinkCount] = useState(1);
+    const [showConfetti, setShowConfetti] = useState(false);
     
     const handleNoButtonClick = () => {
         if(convincingTextsNumber < 20){
@@ -24,9 +26,14 @@ const BeMyVal = () => {
         setConvincingTextsNumber(0);
         setShrinkCount(1);
         setgrowCount(1);
+        setShowConfetti(true);
+        setTimeout(() => {
+            setShowConfetti(false);
+          }, 3000);
     }
   return (
     <section className="w-full h-full grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0">
+        {showConfetti && <Confetti />}
         <div className="col-span-1 h-full flex flex-col items-center justify-center px-3 lg:px-8">
             <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl font-pacifico bg-gradient-to-r bg-clip-text text-transparent to-indigo-500 via-purple-400 from-pink-500 '>With every beat of my heart, I ask: will you be my Valentine?</h1>
             <p className='mt-8 text-[16px] leading-[20px] text-center text-black/90 font-mont max-w-xl'>{convincingTexts[convincingTextsNumber]}</p>
