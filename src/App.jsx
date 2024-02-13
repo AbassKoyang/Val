@@ -9,7 +9,7 @@ function App() {
     createRoutesFromElements(
       <Route path="/" element={<RootLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/be-my-val" element={<BeMyVal />} />
+        <Route path="be-my-val" element={<BeMyVal />} />
       </Route>
     )
   )
