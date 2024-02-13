@@ -1,10 +1,10 @@
-import puppyDogGif from '../assets/peach-goma-peach-and-goma.gif'
+import demo from '../assets/bemyvaldemo.mp4'
 import { Zoom, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 const HomePage = () => {
   const handleButtonClick = () => {
-    navigator.clipboard.writeText('bemyvall.com/will-you-be-my-val');
+    navigator.clipboard.writeText('bemyvall.vercel.app/will-you-be-my-val');
     toast.success('Link copied to clipboard. Share it with your val. 🤗', {
   position: 'top-center',
   theme:'light',
@@ -22,7 +22,10 @@ const HomePage = () => {
             <button onClick={handleButtonClick} className={`mt-8 px-5 py-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-[16px] font-medium rounded-[5px] transition-all duration-200 ease-in-out`}>Copy link</button>
         </div>
        <div className="col-span-1 flex flex-col items-center justify-center">
-            <img src={puppyDogGif} alt="puppy-dog-eyes GIF" className="w-[400px]" />
+       <video width="640" height="360" controls>
+        <source src={demo} type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
        </div>
     </section>
   )

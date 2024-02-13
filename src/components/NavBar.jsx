@@ -3,7 +3,7 @@ import "react-toastify/dist/ReactToastify.css";
 
 const NavBar = () => {
   const handleButtonClick = () => {
-    navigator.clipboard.writeText('bemyvall.com/will-you-be-my-val');
+    navigator.clipboard.writeText('bemyvall.vercel.app/will-you-be-my-val');
     toast.success('Link copied to clipboard. Share it with your val. 🤗', {
   position: 'top-center',
   theme:'light',
