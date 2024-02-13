@@ -31,14 +31,14 @@ const BeMyVal = () => {
           }, 3000);
     }
   return (
-    <section className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0 overflow-x-hidden">
+    <section className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0">
         {showConfetti && <Confetti
         x={0.5}
         y={0}
         particleCount={80}
             numberOfPieces={80}
             colors={['#ec4899', '#6366f1', '#c084fc', 'red', 'yellow']}
-            confettiDuration={400}
+            confettiDuration={300}
         />}
         <div className="col-span-1 h-full flex flex-col items-center justify-center px-3 lg:px-8">
             <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl font-pacifico bg-gradient-to-r bg-clip-text text-transparent to-indigo-500 via-purple-400 from-pink-500 '>With every beat of my heart, I ask: will you be my Valentine?</h1>
