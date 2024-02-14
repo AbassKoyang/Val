@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { convincingTexts } from '../assets/constants'
 import puppyDogGif from '../assets/peach-goma-peach-and-goma.gif'
 import kissesGif from '../assets/peach-goma-love-peach-goma.gif'
@@ -9,6 +9,47 @@ const BeMyVal = () => {
     const [growCount, setgrowCount] = useState(1);
     const [shrinkCount, setShrinkCount] = useState(1);
     const [showConfetti, setShowConfetti] = useState(false);
+    const audioRef = useRef(null);
+    const fireboyAudioRef = useRef(null);
+
+  const playSong = () => {
+    if (audioRef.current && !audioRef.current.paused) {
+      // If audio is already playing, do nothing
+      return;
+    }
+
+    const burnaAudio = new Audio('../src/assets/Burna-Boy-Ft-Ed-Sheeran-For-My-Hand-New-Song-(TrendyBeatz.com).mp3');
+    burnaAudio.currentTime = 4;
+    audioRef.current = burnaAudio;
+    burnaAudio.play();
+  };
+  const playFireboySong = () => {
+    if (fireboyAudioRef.current && !fireboyAudioRef.current.paused) {
+      // If audio is already playing, do nothing
+      return;
+    }
+
+    const fireboyAudio = new Audio('../src/assets/Fireboy-DML-Need-You-[TrendyBeatz.com].mp3');
+    fireboyAudio.currentTime = 8;
+    fireboyAudioRef.current = fireboyAudio;
+    fireboyAudio.play();
+  };
+
+  const stopSong = () => {
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+  };
+  const stopFireboySong = () => {
+    if (fireboyAudioRef.current) {
+      fireboyAudioRef.current.pause();
+    }
+  };
+
+    
+    useEffect(() => {
+      playFireboySong();
+    }, [])
     
     const handleNoButtonClick = () => {
         if(convincingTextsNumber < 20){
@@ -20,7 +61,10 @@ const BeMyVal = () => {
             setgrowCount((prev)  => prev + 0.1);
             setShrinkCount((prev)  => prev - 0.05);
         }
-    }
+        stopSong();
+        playFireboySong();
+        }
+        
     const handleYesButtonClick = () => {
         setConvincingTextsNumber(0);
         setShrinkCount(1);
@@ -29,7 +73,10 @@ const BeMyVal = () => {
         setTimeout(() => {
             setShowConfetti(false);
           }, 3000);
+        stopFireboySong();
+        playSong();
     }
+
   return (
     <section className="w-full min-h-screen grid grid-cols-1 lg:grid-cols-2 gap-7 lg:gap-0 bg-white pt-[93px] mt-10 lg:mt-0">
         {showConfetti && <Confetti
@@ -41,7 +88,7 @@ const BeMyVal = () => {
             confettiDuration={300}
         />}
         <div className="col-span-1 h-full flex flex-col items-center justify-center px-3 lg:px-8">
-            <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl font-pacifico bg-gradient-to-r bg-clip-text text-transparent to-indigo-500 via-purple-400 from-pink-500 '>With every beat of my heart, I ask: will you be my Valentine?</h1>
+            <h1 className='max-w-[100%] text-center text-4xl lg:text-6xl font-pacifico bg-gradient-to-r bg-clip-text text-transparent to-indigo-500 via-purple-400 from-pink-500 '>{convincingTextsNumber === 0 ? 'Happy Valentines day! I Love You. ❤' : 'With every beat of my heart, I ask: will you be my Valentine?'}</h1>
             <p className='mt-8 text-[16px] leading-[20px] text-center text-black/90 font-mont max-w-xl'>{convincingTexts[convincingTextsNumber]}</p>
             <div className="w-full flex items-center justify-center mt-4 lg:hidden transition-all duration-200 ease-in-out">
                 { convincingTextsNumber > 0 && convincingTextsNumber < 2 && (
