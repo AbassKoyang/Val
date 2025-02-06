@@ -22,10 +22,10 @@ const NavBar = () => {
         <Link to='/' className="text-2xl lg:text-4xl font-bold text-pink-500 font-pacifico">beMyVal<span className="text-black text-[72px]">.</span></Link>
         <div className="h-full flex item-center gap-3">
         <Link to='will-you-be-my-val' className={`px-5 py-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm md:text-[16px] font-medium rounded-[5px] transition-all duration-200 ease-in-out hidden md:block ${location.pathname === '/will-you-be-my-val' ? 'hidden' : 'block'} `}>Try it out</Link>
-          {location === '/' && (
+          {location === '/' ? (
       <button onClick={handleButtonClick} className={`px-5 py-[10px] bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white text-sm md:text-[16px] font-medium rounded-[5px] transition-all duration-200 ease-in-out`}>Copy link</button>
         </div>
-          )}
+          ) : null}
         </div>
     </header>
   )
