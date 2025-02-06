@@ -15,8 +15,8 @@ const HomePage = () => {
        <div className="col-span-1 flex flex-col items-center justify-center">
        <img src={demo} alt="Demo" className={`hidden lg:block w-[600px] drop-shadow-[0_50px_50px_rgba(255,192,203,0.7)]`} />
        </div>
+      <Footer />
     </section>
-    <Footer />
   )
 }
 
